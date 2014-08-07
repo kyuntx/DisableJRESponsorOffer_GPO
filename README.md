@@ -1,16 +1,13 @@
-DisableJRESponsorOffer_GPO
-==========================
+## JRE のスポンサーオファーを無効にするGPO
 
-# JRE のスポンサーオファーを無効にするGPO
-
-## コレは何？
+### コレは何？
 
 JRE(Javaランタイム)のインストーラがアップデートのたびに ASK ツールバーとか召喚するのがウザ過ぎるので無効にするグループポリシー定義ファイルです。
 Active Directory 環境だと一網打尽にできます。
 
 CustomADMX(http://customadmx.sourceforge.net/) の JRE 定義をベースにしています。
 
-## 使い方
+### 使い方
 
 - Active Directory のセントラルストアに定義ファイルを置きます。
 
@@ -25,7 +22,7 @@ Disable Sponsor Offers :有効
 
 - OUに割り当てて gpupdate /force ！
 
-## ライセンス
+### ライセンス
 
 ベースに下 CustomADMX(http://customadmx.sourceforge.net/) に従い GPLv2 です。
 
