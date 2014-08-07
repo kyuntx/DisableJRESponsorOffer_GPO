@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns=
+   "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+   revision="1.0" schemaVersion="1.0">
+  <displayName>Oracle Corporation software policies base file</displayName>
+  <description>This file contains the Oracle Corporation software policies parent category.</description>
+  <resources>
+    <stringTable>
+      <string id="Oracle_Corp">Oracle Corporation</string>
+      <string id="Oracle_Corp_Help">Contains Oracle Corporation software specific configuration settings.</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

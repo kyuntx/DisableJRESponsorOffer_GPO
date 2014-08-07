@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  revision="1.0" schemaVersion="1.0" 
+  xmlns=
+  "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="Custom" namespace="Custom.Policies.Custom" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="Custom_Policies"
+              displayName="$(string.Custom_Policies)"
+              explainText="$(string.Custom_Policies_Help)" />
+  </categories>
+</policyDefinitions>

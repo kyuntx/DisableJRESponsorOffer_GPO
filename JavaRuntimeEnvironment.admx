@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+Skype policies.
+Version history:
+05.09.2011: Initial version
+
+https://sourceforge.net/projects/customadmx/
+Created by Nov.
+Managed by Nov.-->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  revision="1.0" schemaVersion="1.0" 
+  xmlns=
+  "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="JRE" namespace="Custom.Policies.Custom.Oracle_Corp.JRE" />
+    <using prefix="Oracle_Corp" namespace="Custom.Policies.Custom.Oracle_Corp" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_JRE_Any"
+                  displayName="$(string.SUPPORTED_JRE_Any)"/>
+      <definition name="SUPPORTED_JRE_JRE7_65"
+                  displayName="$(string.SUPPORTED_JRE_JRE7_65)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="JRE"
+              displayName="$(string.JRE)"
+              explainText="$(string.JRE_Help)">
+       <parentCategory ref="Oracle_Corp:Oracle_Corp" />
+    </category>
+	<category name="Update"
+              displayName="$(string.Update)"
+              explainText="$(string.Update_Help)">
+       <parentCategory ref="JRE" />
+    </category>
+  </categories>
+  <policies>
+	<policy name="Enable_JRE_Update"
+            class="Machine"
+            displayName="$(string.Enable_JRE_Update)"
+            explainText="$(string.Enable_JRE_Update_Help)"
+			key="SOFTWARE\Javasoft\Java Update\Policy">
+      <parentCategory ref="Update" />
+	  <supportedOn ref="SUPPORTED_JRE_Any" />
+	  <enabledList>
+	    <item key="SOFTWARE\Wow6432Node\Javasoft\Java Update\Policy" valueName="EnableJavaUpdate">
+          <value>
+		    <decimal value="1" />
+		  </value>
+		</item>
+		<item key="SOFTWARE\Javasoft\Java Update\Policy" valueName="EnableJavaUpdate">
+		  <value>
+		    <decimal value="1" />
+		  </value>
+		</item>
+	  </enabledList>
+	  <disabledList>
+	    <item key="SOFTWARE\Wow6432Node\Javasoft\Java Update\Policy" valueName="EnableJavaUpdate">
+		  <value>
+		    <decimal value="0" />
+		  </value>
+		</item>
+		<item key="SOFTWARE\Javasoft\Java Update\Policy" valueName="EnableJavaUpdate">
+		  <value>
+		    <decimal value="0" />
+		  </value>
+		</item>
+	  </disabledList>
+	</policy>
+	
+	<policy name="JRE_Update_Frequency"
+            class="Machine"
+            displayName="$(string.JRE_Update_Frequency)"
+            explainText="$(string.JRE_Update_Frequency_Help)"
+			presentation="$(presentation.JRE_Update_Frequency)"
+			key="SOFTWARE\Javasoft\Java Update\Policy">
+      <parentCategory ref="Update" />
+	  <supportedOn ref="SUPPORTED_JRE_Any" />
+	  <elements>
+        <decimal id="JRE_Update_Frequency_x64"
+                 key="SOFTWARE\Wow6432Node\Javasoft\Java Update\Policy"
+                 valueName="Frequency"
+                 required="true" 
+                 minValue="0" />
+        <decimal id="JRE_Update_Frequency_x32"
+                 key="SOFTWARE\Javasoft\Java Update\Policy"
+                 valueName="Frequency"
+                 required="true" 
+                 minValue="0" />
+		</elements>
+	</policy>
+	<policy name="JRE_Notify_Download"
+            class="Machine"
+            displayName="$(string.JRE_Notify_Download)"
+            explainText="$(string.JRE_Notify_Download_Help)"
+			key="SOFTWARE\Javasoft\Java Update\Policy">
+      <parentCategory ref="Update" />
+	  <supportedOn ref="SUPPORTED_JRE_Any" />
+	  <enabledList>
+	    <item key="SOFTWARE\Wow6432Node\Javasoft\Java Update\Policy" valueName="NotifyDownload">
+		  <value>
+		    <decimal value="1" />
+		  </value>
+		</item>
+		<item key="SOFTWARE\Javasoft\Java Update\Policy" valueName="NotifyDownload">
+		  <value>
+		    <decimal value="1" />
+		  </value>
+		</item>
+	  </enabledList>
+	  <disabledList>
+	    <item key="SOFTWARE\Wow6432Node\Javasoft\Java Update\Policy" valueName="NotifyDownload">
+		  <value>
+		    <decimal value="0" />
+		  </value>
+		</item>
+		<item key="SOFTWARE\Javasoft\Java Update\Policy" valueName="NotifyDownload">
+		  <value>
+		    <decimal value="0" />
+		  </value>
+		</item>
+	  </disabledList>
+	</policy>
+<policy name="JRE_Notify_Install"
+            class="Machine"
+            displayName="$(string.JRE_Notify_Install)"
+            explainText="$(string.JRE_Notify_Install_Help)"
+			key="SOFTWARE\Javasoft\Java Update\Policy">
+      <parentCategory ref="Update" />
+	  <supportedOn ref="SUPPORTED_JRE_Any" />
+	  <enabledList>
+	    <item key="SOFTWARE\Wow6432Node\Javasoft\Java Update\Policy" valueName="NotifyInstall">
+		  <value>
+		    <decimal value="1" />
+		  </value>
+		</item>
+		<item key="SOFTWARE\Javasoft\Java Update\Policy" valueName="NotifyInstall">
+		  <value>
+		    <decimal value="1" />
+		  </value>
+		</item>
+	  </enabledList>
+	  <disabledList>
+	    <item key="SOFTWARE\Wow6432Node\Javasoft\Java Update\Policy" valueName="NotifyInstall">
+		  <value>
+		    <decimal value="0" />
+		  </value>
+		</item>
+		<item key="SOFTWARE\Javasoft\Java Update\Policy" valueName="NotifyInstall">
+		  <value>
+		    <decimal value="0" />
+		  </value>
+		</item>
+	  </disabledList>
+	</policy>
+	<policy name="JRE_Update_Schedule"
+            class="Machine"
+            displayName="$(string.JRE_Update_Schedule)"
+            explainText="$(string.JRE_Update_Schedule_Help)"
+			presentation="$(presentation.JRE_Update_Schedule)"
+			key="SOFTWARE\Javasoft\Java Update\Policy">
+      <parentCategory ref="Update" />
+	  <supportedOn ref="SUPPORTED_JRE_Any" />
+	  <elements>
+        <decimal id="JRE_Update_Schedule_x64"
+                 key="SOFTWARE\Wow6432Node\Javasoft\Java Update\Policy"
+                 valueName="UpdateSchedule"
+                 required="true" 
+                 minValue="0" />
+        <decimal id="JRE_Update_Schedule_x32"
+                 key="SOFTWARE\Javasoft\Java Update\Policy"
+                 valueName="UpdateSchedule"
+                 required="true" 
+                 minValue="0" />
+		</elements>
+	</policy>
+	<policy name="JRE_Disable_Sponsors_Offer"
+            class="Machine"
+            displayName="$(string.JRE_Disable_Sponsors_Offer)"
+            explainText="$(string.JRE_Disable_Sponsors_Offer_Help)"
+			key="Software\JreMetrics">
+      <parentCategory ref="Update" />
+	  <supportedOn ref="SUPPORTED_JRE_JRE7_65" />
+	  <enabledList>
+        <item key="SOFTWARE\Wow6432Node\JreMetrics" valueName="DisableSponsors">
+          <value>
+            <string>Y</string>
+          </value>
+        </item>
+        <item key="SOFTWARE\JreMetrics" valueName="DisableSponsors">
+          <value>
+            <string>Y</string>
+          </value>
+        </item>
+	  </enabledList>
+      <disabledList>
+        <item key="SOFTWARE\Wow6432Node\JreMetrics" valueName="DisableSponsors">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="SOFTWARE\JreMetrics" valueName="DisableSponsors">
+          <value>
+            <delete />
+          </value>
+        </item>
+      </disabledList>
+	</policy>
+  </policies>
+</policyDefinitions>

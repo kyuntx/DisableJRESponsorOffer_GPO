@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns=
+   "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+   revision="1.0" schemaVersion="1.0">
+  <displayName>Custom Policies base file</displayName>
+  <description>This file contains the Custom Policies parent category.</description>
+  <resources>
+    <stringTable>
+      <string id="Custom_Policies">Custom Policies</string>
+      <string id="Custom_Policies_Help">Contains Custom Policies specific configuration settings.</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

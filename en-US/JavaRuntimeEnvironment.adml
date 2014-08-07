@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns=
+   "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+   revision="1.0" schemaVersion="1.0">
+  <displayName>Java Runtime Environment policies file</displayName>
+  <description>This file contains the Java Runtime Environment policies.</description>
+  <resources>
+    <stringTable>
+      <string id="JRE">Java Runtime Environment</string>
+      <string id="JRE_Help">Contains Java Runtime Environment (JRE) software specific configuration settings.</string>
+	  <string id="Update">Update</string>
+	  <string id="Update_Help">Contains JRE software specific update configuration settings.</string>
+	  <string id="SUPPORTED_JRE_Any">Any JRE version</string>
+	  <string id="SUPPORTED_JRE_JRE7_65">At least Java 7 Update 65</string>
+	  <string id="Enable_JRE_Update">Enable Java Runtime Update</string>
+	  <string id="Enable_JRE_Update_Help">Enables Java Runtime Environment updating mechanism.
+
+When enabled, Java Runtime Environment will be automatically updated.
+
+When disabled, Java Runtime Environment will not be automatically updated.</string>
+	  <string id="JRE_Update_Frequency">JRE Update Frequency</string>
+	  <string id="JRE_Update_Frequency_Help">Determines JRE update frequency.
+
+Note: there are different settings for x64 and x86 JRE editions.</string>
+	  <string id="JRE_Notify_Download">Notify Download</string>
+	  <string id="JRE_Notify_Download_Help">When enabled, JRE notifies of update being available.
+
+When disabled, JRE does not notify of update being available.</string>
+	  <string id="JRE_Notify_Install">Notify Install</string>
+	  <string id="JRE_Notify_Install_Help">When enabled, JRE notifies of update being ready to be installed.
+
+When disabled, JRE does not notify of update being ready to be installed.</string>
+	  <string id="JRE_Update_Schedule">Update Schedule</string>
+	  <string id="JRE_Update_Schedule_Help">Determines JRE update schedule.
+
+Note: there are different settings for x64 and x86 JRE editions.</string>
+	  <string id="JRE_Disable_Sponsors_Offer">Disable Sponsor Offers</string>
+	  <string id="JRE_Disable_Sponsors_Offer_Help">When enabled, JRE installer does not show sponsor offers at the time of installation.
+(Such as ASK Toolbar)
+
+When disabled, JRE installer shows sponsor offers at the time of installation.
+</string>
+
+    </stringTable>
+    <presentationTable>
+	  <presentation id="JRE_Update_Frequency">
+        <decimalTextBox refId="JRE_Update_Frequency_x64"
+		                required="true">x64 JRE update frequency:</decimalTextBox>
+        <decimalTextBox refId="JRE_Update_Frequency_x32"
+		                required="true">x86 JRE update frequency:</decimalTextBox>
+      </presentation>
+	  <presentation id="JRE_Update_Schedule">
+        <decimalTextBox refId="JRE_Update_Schedule_x64"
+		                required="true">x64 JRE update schedule:</decimalTextBox>
+        <decimalTextBox refId="JRE_Update_Schedule_x32"
+		                required="true">x86 JRE update schedule:</decimalTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
