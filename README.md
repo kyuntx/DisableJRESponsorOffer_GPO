@@ -2,7 +2,7 @@
 
 ### コレは何？
 
-JRE(Javaランタイム)のインストーラがアップデートのたびに ASK ツールバーとか召喚するのがウザ過ぎるので無効にするグループポリシー定義ファイルです。
+JRE(Javaランタイム)のインストーラがアップデートのたびに ASK ツールバーとか召喚するのがウザ過ぎるので無効にするグループポリシー定義ファイルです。  
 Active Directory 環境だと一網打尽にできます。
 
 CustomADMX(http://customadmx.sourceforge.net/) の JRE 定義をベースにしています。
@@ -17,12 +17,12 @@ CustomADMX(http://customadmx.sourceforge.net/) の JRE 定義をベースにし�
 
 - 以下のグループポリシーを設定します
 
-`コンピューターの構成/管理用テンプレート/Custom Policies/Oracle Corporation/Java Runtime Environment/Update`
+`コンピューターの構成/管理用テンプレート/Custom Policies/Oracle Corporation/Java Runtime Environment/Update`  
 `Disable Sponsor Offers :有効`
 
 - OUに割り当てて gpupdate /force ！
 
 ### ライセンス
 
-ベースにした CustomADMX(http://customadmx.sourceforge.net/) に従い GPLv2 です。
+ベースにした CustomADMX(http://customadmx.sourceforge.net/) に従い GPLv2(http://www.gnu.org/licenses/gpl-2.0.html) です。
 
