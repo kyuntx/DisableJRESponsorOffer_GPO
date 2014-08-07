@@ -11,14 +11,14 @@ CustomADMX(http://customadmx.sourceforge.net/) の JRE 定義をベースにし�
 
 - Active Directory のセントラルストアに定義ファイルを置きます。
 
-    \\(DOMAIN_FQDN)\SYSVOL\(DOMAIN_FQDN)\Policies\PolicyDefinitions
+`\\(DOMAIN_FQDN)\SYSVOL\(DOMAIN_FQDN)\Policies\PolicyDefinitions`
 
 - 日本語環境だと、en-US フォルダの中身を ja-JP フォルダにもコピーします
 
 - 以下のグループポリシーを設定します
 
-    コンピューターの構成/管理用テンプレート/Custom Policies/Oracle Corporation/Java Runtime Environment/Update
-    Disable Sponsor Offers :有効  
+`コンピューターの構成/管理用テンプレート/Custom Policies/Oracle Corporation/Java Runtime Environment/Update`
+`Disable Sponsor Offers :有効`
 
 - OUに割り当てて gpupdate /force ！
 
